@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Обратная связь</title>
+<style type="text/css">
+body {font-family:"Arial";color:#493628;background:PapayaWhip}
+
+textarea {
+    padding:8px; 
+    border:2px solid #ccc; 
+    border-radius: 24px;
+}
+
+
+
+input[type=submit] {
+   width: 100px;
+   padding: 5px 5px;
+   margin: 2px 2px;
+   cursor: pointer;
+   font-size: 16px;
+   text-align: center;
+   text-decoration: none;
+   transition-duration: 0.4s;
+   background: #B9DFFF;
+   color: white;
+   border: none
+   border-radius: 0px;
+   text-shadow: none;
+}
+
+input[type=submit].button1 {
+   background-color: #D76C82;
+   color: #013220;
+   border: 3px solid #867070
+}
+
+input[type=submit].button1:hover {
+   background-color: #C6E7FF;
+   color: #013220;
+   border: 3px solid #867070
+}
+</style>
+
+</head>
+  
+<body>
+<center>
+<h2>Напишите Ваше пожелание или предложения автору</h2>
+<table border="0">
+<tr align="left">
+  <td>
+  </td>
+  <td>
+     <label style="font-size: 20px;"> Ваше сообщение:</label>
+  </td>
+</tr>
+<tr align="right">
+   <td>
+     <div>
+       <img src="img/humor/4295613_original.jpg" height="100%" width="100%" alt="1">
+     </div>
+   </td>
+   <td>
+      <form action="https://formspree.io/f/mldenelb" method="POST">
+      <label style="font-size: 20px;">
+      <input type="hidden" name="email" value="gyroxon@mail.ru">
+      </label>
+      
+        <textarea rows="28" cols="50" name="message" ></textarea>
+ 	<!-- your other form fields go here -->
+	</br>
+        
+  	<input type="submit" class="input[type=submit] button1" value="Отправить"/>
+        
+      
+      </form>
+   </td>
+</tr>
+
+<tr>
+   <td>
+   </td>
+    <td>
+       
+   </td>
+</tr>
+</table>
+
+<p>* * *</p>
+<p>13 Ноября 2024 by Gyros</p>
+</center>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Моя маленькая страничка</title>
+</head>
+
+<style type="text/css">
+
+
+textarea {
+          color:black;
+          background-color:Wheat;
+          font-family:"Courier New";
+          resize:none;
+          border-radius: 12px;}
+body {
+       font-family:"Arial";
+       color:navy;
+       background:#FAEBD7;}
+table {
+    font-family:"Verdana";
+    align:center;
+    width: 75%;              /* Ширина таблицы */
+    border: 1px solid #333;  /* Граница вокруг таблицы */
+    border-spacing: 7px 5px; /* Расстояние между ячеек */
+    border-radius: 10px;     /* Радиус скругления */
+   }
+td {
+    color: black;
+    background: #8FBC8F;     /* Цвет фона */
+    border: 2px solid #333;  /* Граница вокруг ячеек */
+    padding: 10px;            /* Поля в ячейках */ 
+    border-radius: 12px;     /* Радиус скругления */
+    
+   }
+ p {
+    text-indent: 30px;       /* Отступ первой строки в пикселах */
+   }
+img {
+    opacity: 0.97;
+    background: transparent;
+    /* background-color: rgba(255, 255, 0, 0.5); */
+   }
+.sect1 {
+	background:url('img/philos/IMG_20200105_123435_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect1::before {
+	background:url('img/philos/IMG_20200105_123435_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect2 {
+	background:url('img/philos/IMG_20200105_124203_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect2::before {
+	background:url('img/philos/IMG_20200105_124203_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect3 {
+	background:url('img/philos/IMG_20200105_124152_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect3::before {
+	background:url('img/philos/IMG_20200105_124152_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect4 {
+	background:url('img/philos/IMG_20200105_122526_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect4::before {
+	background:url('img/philos/IMG_20200105_122526_832.png') 0 / cover fixed;
+	width:100%;
+	height:600px;
+}
+
+.sect5 {
+	background:url('img/philos/IMG_20200105_123057_832.png') 0 / cover fixed;
+	width:100%;
+	height:700px;
+}
+
+.sect5::before {
+	background:url('img/philos/IMG_20200105_123057_832.png') 0 / cover fixed;
+	width:100%;
+	height:700px;
+}
+
+.sect6 {
+	background:url('img/philos/IMG_20200105_130045_832.png') 0 / cover fixed;
+	width:100%;
+	height:700px;
+}
+
+.sect6::before {
+	background:url('img/philos/IMG_20200105_130045_832.png') 0 / cover fixed;
+	width:100%;
+	height:700px;
+}
+
+.sect7 {
+	background:url('img/philos/IMG_20200105_130806_832.png') 0 / cover fixed;
+	width:100%;
+	height:700px;
+}
+
+.sect7::before {
+	background:url('img/philos/IMG_20200105_130806_832.png') 0 / cover fixed;
+	width:100%;
+	height:700px;
+}
+
+.div_backgr1::before {
+	background:url('img/philos/IMG_20200105_123435_832.png') 0 / cover fixed;
+}
+.div_backgr1 {
+	top:160px;
+	bottom:-150px;
+	left:-220px;
+	width:590px;
+	height:180px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr1::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+
+
+.div_backgr2::before {
+	background:url('img/philos/IMG_20200105_123435_832.png') 0 / cover fixed;
+}
+.div_backgr2 {
+	top:220px;
+	bottom:200px;
+	left:220px;
+	width:590px;
+	height:140px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr2::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+
+.div_backgr3::before {
+	background:url('img/philos/IMG_20200105_124203_832.png') 0 / cover fixed;
+}
+.div_backgr3 {
+	top:220px;
+	bottom:200px;
+	left:220px;
+	width:590px;
+	height:320px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr3::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+
+.div_backgr4::before {
+	background:url('img/philos/IMG_20200105_124152_832.png') 0 / cover fixed;
+}
+.div_backgr4 {
+	top:60px;
+	bottom:-100px;
+	left:-220px;
+	width:590px;
+	height:180px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr4::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+   
+.div_backgr5::before {
+	background:url('img/philos/IMG_20200105_124152_832.png') 0 / cover fixed;
+}
+.div_backgr5 {
+	top:160px;
+	bottom:100px;
+	left:210px;
+	width:610px;
+	height:140px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr5::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+ 
+.div_backgr6::before {
+	background:url('img/philos/IMG_20200105_122526_832.png') 0 / cover fixed;
+}
+.div_backgr6 {
+	top:60px;
+	bottom:-100px;
+	left:-220px;
+	width:590px;
+	height:180px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr6::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+   
+.div_backgr7::before {
+	background:url('img/philos/IMG_20200105_122526_832.png') 0 / cover fixed;
+}
+.div_backgr7 {
+	top:160px;
+	bottom:100px;
+	left:210px;
+	width:610px;
+	height:140px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr7::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }  
+   
+.div_backgr8::before {
+	background:url('img/philos/IMG_20200105_123057_832.png') 0 / cover fixed;
+}
+.div_backgr8 {
+	top:50px;
+	bottom:80px;
+	left:-210px;
+	width:620px;
+	height:230px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr8::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+   
+.div_backgr9::before {
+	background:url('img/philos/IMG_20200105_123057_832.png') 0 / cover fixed;
+}
+.div_backgr9 {
+	top:180px;
+	bottom:150px;
+	left:210px;
+	width:620px;
+	height:220px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr9::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+   
+.div_backgr10::before {
+	background:url('img/philos/IMG_20200105_130045_832.png') 0 / cover fixed;
+}
+.div_backgr10 {
+	top:50px;
+	bottom:80px;
+	left:-210px;
+	width:620px;
+	height:320px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr10::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+   
+.div_backgr11::before {
+	background:url('img/philos/.png') 0 / cover fixed;
+}
+.div_backgr11 {
+	top:180px;
+	bottom:150px;
+	left:210px;
+	width:620px;
+	height:220px;
+	position:relative;
+    overflow:hidden;
+	background:hsla(0, 0%, 100%, 0.15);
+    border-radius: 20px; 
+  }
+
+.div_backgr11::before {
+	content:'';
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	filter:blur(15px);
+	margin:-30px;
+   }
+
+
+
+.blquote_1 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(240, 225, 0, 0.40); 
+    border-radius: 20px; 
+   }
+
+.blquote_2 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(45, 225, 15, 0.43); 
+    border-radius: 20px; 
+   }
+
+.blquote_3 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(145, 105, 15, 0.43); 
+    border-radius: 20px; 
+   }
+
+.blquote_4 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(145, 10, 165, 0.43); 
+    border-radius: 20px; 
+   }
+   
+.blquote_5 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(15, 150, 145, 0.43); 
+    border-radius: 20px; 
+   }
+   
+.blquote_6 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(75, 140, 205, 0.43); 
+    border-radius: 20px; 
+   }
+   
+.blquote_7 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(155, 140, 205, 0.43); 
+    border-radius: 20px; 
+   }
+   
+.blquote_8 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(230, 126, 34, 0.43); 
+    border-radius: 20px; 
+   }
+   
+.blquote_9 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(41, 128, 185, 0.43); 
+    border-radius: 20px; 
+   }
+   
+.blquote_10 {
+    font-family: monospace;
+	font-style: italic;
+	font-size: 15px;
+    position:relative;
+    background-color: rgba(203, 67, 53, 0.43); 
+    border-radius: 20px; 
+   }
+
+
+</style>
+
+<body>
+<center>
+<h1>Философская тема</h1>
+<p>* * *</p>
+<section class="sect1">
+<div class="div_backgr1">
+  <blockquote class="blquote_1">
+	Где, отвечай мне, <i><b>вчера</b></i> и где твое <i><b>завтра</b></i>, поведай;</br>
+Сам ты откуда пришел, путь свой направишь куда?</br>
+Что тебе долгая жизнь, если вскоре умрешь ты, а время </br>
+Так быстролетно. С листвой нашу природу сравню.</br>
+Тленны земля и вода; все то, что от них зародилось,</br>
+К ним возвратится, и жизнь - как ты не бейся - пуста. </br>
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+<div class="div_backgr2">
+<blockquote class="blquote_2">
+	Всем смертным ныне я хочу подать <i>совет</i>:</br>
+	       Живя, познайте радость, ибо тот, кто <i><b>мертв</b></i>,-</br>
+	   Лишь тень в подземном мраке, он теперь - <i><b>ничто</b></i>.</br>
+	       Живущим надо жизнью насладиться здесь.</br>
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+</section>
+</br>
+
+
+<section class="sect2">
+<div class="div_backgr3">
+  <blockquote class="blquote_3">
+	Нет у людей ничего долговечного. Истину эту</br>
+Выразил лучше всего славный хиосец, сказав:</br>
+"Так же, как листья деревьев, сменяются роды людские." </br>
+Редко однако же, кто, слушая эти слова,</br>
+Воспринимает сердцем своим - потому что надежда</br>
+В каждом живет, с юных лет укореняясь в груди. </br>
+Каждый, пока не увял еще цвет его юности милой,</br>
+Много несбыточных дум носит в наивном уме;</br>
+Мысли о старосте, смерти грозящей его не тревожат,</br>
+Нет до болезней ему дела, пока он здоров.</br>
+Жалок тот неразумный, кто даже подумать не хочет,</br>
+Что ненадолго даны смертному юность и жизнь!</br>
+Ты же, постигнувший это, ищи до самой кончины</br>
+Благ, от которых душе было б отрадно твоей.</br>
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+</section>
+</br>
+
+<section class="sect3">
+<div class="div_backgr4">
+  <blockquote class="blquote_4">
+	Ночи проходят, и мы ежедневно рождаемся снова:</br>
+Прошлые дни никакой прибыли нам не дают. </br>
+   День, миновавший вчера, для нас пропадает бесследно, </br>
+И начинаем опять жизнь сегодняшним днем,</br>
+Не называй же, старик, никогда ты себя многолетним</br>
+Нет на сегодня того, что миновало вчера. </br>
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+
+<div class="div_backgr5">
+<blockquote class="blquote_5">
+	Если бы человеческая жизнь была вечной и не исчезала бы</br>
+	       в один прекрасный день, подобно росе на равнине Адаси, и</br>
+	   не рассеивалась бы, как дым над горой Торибэ, не было бы в ней
+	       столько скрытого очарования.</br>
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+</section>
+</br>
+
+<section class="sect4">
+<div class="div_backgr6">
+  <blockquote class="blquote_6">
+	Посмотрите на тех, кто обладает жизнью - </br>человеческая жизнь самая длинная.</br>
+Есть существа вроде поденки, что умирает, </br> не дождавшись вечера,  и вроде </br>
+   летней цикады, что не ведает ни весны, ни осени.</br>
+Достаточно долог даже год, если прожить его спокойно.
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+
+<div class="div_backgr7">
+<blockquote class="blquote_7">
+	Если ты жалеешь, что не насытился вдоволь жизнью, то, и </br>
+	       тысячу лет прожив, будешь испытывать чувство, будто твоя </br>
+	   жизнь подобно краткому сну.
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+</section>
+</br>
+
+<section class="sect5">
+<div class="div_backgr8">
+  <blockquote class="blquote_8">
+	Если кто при тебе сокрушается горько</br>
+И негодует на то, что сгниет его тело в могиле,  </br>
+   Или же пламя его иль звериная пасть уничтожит, </br>
+Ясно, что он говорит не искренне, что уязвляет</br>
+	Сердце его затаенная мысль, вопреки увереньям</br>
+Собственным, что никаких ощущений со смертью не будет;</br>
+	Не соблюдает, по мне, он своих убеждений заветных,</br>
+С корнем из жизни себя ивлечь не желая и вырвать,</br>
+	Но бессознательно мнит, что не весь он по сметри погибнет.</br>
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+
+<div class="div_backgr9">
+<blockquote class="blquote_9">
+	Ибо тому, кто живой представляет себе, что по смерти</br>
+Тело терзают его и птицы и дикие звери,</br>
+	Жалко себя самого; он себя отделить не способен</br>
+И отрешиться вполне от простертого трупа: себя он.</br>
+	Видит лежащим пред ним и свои придает ему чувства.</br>
+В негодовании он на то, что смертным родился,</br>
+	Не сознавая того, что при истинной смерти не может</br>
+Быть никого, кто бы мог, как живой, свою гибель оплакать,</br>
+	Видя себя самого терзаемым или сожженым.
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+</section>
+</br>
+
+<section class="sect6">
+<div class="div_backgr10">
+  <blockquote class="blquote_10">
+	Ибо, коль горестно быть после смерти раздробленным пастью</br>
+Диких зверей, почему не ужасно - понять не могу я - </br>
+   В пламени жарком гореть, на костре погребальном пылая, </br>
+Или положенным в мед задыхаться и мерзнуть от стужи,</br>
+	Ежели труп распростерт на холодных каменьях гробницы</br>
+Или могильной землей засыпан и тяжко раздавлен.</br>
+	"Нет, никогда ни твой радостный дом, ни жена дорогая</br>
+Больше не примут тебя, не сбегутся и милые дети</br>
+	Наперерыв целовать и наполнить отрадою сердце.</br>
+Не в состоянии ты уже больше способствовать благу</br>
+	И процветанью родных. Погубил, о несчастный! - взывают -</br>
+Этот единственный день злополучный все радости жизни!"</br>
+Но не прибавит никто: <b>"Но зато у тебя не осталось</br>
+	Больше тоски никакой, ни стремления ко всем этим благам"</b>.
+<footer><cite align="right"><b>***</b></cite></footer>
+  </blockquote>
+</div>
+
+</section>
+</br>
+
+<section class="sect7">
+</section>
+</br>
+
+
+<img src="img\skull_32.png" />  <img src="img\skull_32.png" />  <img src="img\skull_32.png" />
+<p>5 Апреля 2025 by Gyros</p>
+</center>
+</body>
+</html>

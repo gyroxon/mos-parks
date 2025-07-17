@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Мелодии</title>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+	<script>
+			let canvas;
+			let visual_elem;
+			let fft;
+
+			function setup() {
+				visual_elem = document.getElementById('sketch-container');
+  				canvas = createCanvas(700, 300);
+  				canvas.parent("sketch-container");
+  				//canvas.style("display", "block");
+  				//canvas.position(300, 20);
+  				
+  				// Make our canvas an overlay
+  				//canvas.position(0, 0);
+  				// Pass mouse input throught to the elements below
+  				canvas.style('pointer-events', 'none');
+
+  				fft = new p5.FFT();
+
+  				let context = getAudioContext();
+  				// wire all media elements up to the p5.sound AudioContext
+  				for (let elem of selectAll('audio').concat(selectAll('video'))) {
+    				let mediaSource = context.createMediaElementSource(elem.elt);
+    				mediaSource.connect(p5.soundOut);
+  				}
+			}
+
+			function draw() {
+  				clear();
+  				background(100, 50);
+  				//circle(100, 100, 30);
+  				if (fft) {
+    				drawSpectrumGraph(0, 0, width, height);
+  				}
+			}
+
+			// Graphing code adapted from https://jankozeluh.g6.cz/index.html by Jan Koželuh
+			function drawSpectrumGraph(left, top, w, h) {
+  				let spectrum = fft.analyze();
+
+  				stroke('#BDA7FA');
+  				fill('#E3F9A6'); //fill('#F2BB66');
+  				strokeWeight(2);
+
+  				beginShape();
+  				vertex(left, top + h);
+
+  				for (let i = 0; i < spectrum.length; i++) {
+    				vertex(	left + map(log(i), 0, log(spectrum.length), 0, w), top + map(spectrum[i], 0, 255, h, 0)  );
+  				}
+
+  				vertex(left + w, top + h);
+  				endShape(CLOSE);
+			}
+		</script>	
+
+
+<style type="text/css">
+textarea {
+          color:black;
+          background-color:Wheat;
+          font-family:"Courier";
+          resize:none;
+          border-radius: 12px;
+     }
+body {
+       font-family:"Arial";
+       color:navy;
+       background:#ECE5B6;
+     }
+table {
+    text-align: center; 
+    width: 50%;              /* Ширина таблицы */
+    border: 0px solid #333;  /* Граница вокруг таблицы */
+    border-spacing: 10px 10px; /* Расстояние между ячеек */
+    border-radius: 10px;     /* Радиус скругления */
+   }
+tr {
+	font-family:"Comic Sans MS", "Comic Sans", cursive;
+	font-size: 25px;
+}
+
+td {
+    color: #E3F9A6;
+    background: #915F6D;     /* Цвет фона */
+    border: 2px solid #333;  /* Граница вокруг ячеек */
+    padding: 10px;            /* Поля в ячейках */ 
+    border-radius: 12px;     /* Радиус скругления */
+   }
+   
+ p {
+    text-indent: 30px;       /* Отступ первой строки в пикселах */
+   }
+   
+ div {
+  position: sticky;  background-color:#73A16C; float:center; width: 700px; height: 300px; 
+  top: 0;
+  border: 2px solid #333;
+  padding: 10px; 
+  border-radius: 12px;  
+}
+
+</style>
+
+</head>
+
+
+<body>
+	<center>
+	<h1>Мелодии</h1>
+	<p="status">* * *</p>
+	<h2></h2>
+	
+	<div id="sketch-container"></div>
+	</br>
+	<table>
+   		<tr alight="center"><td><video width="320" height="240" src="https://gyroxon.github.io/mos-parks/Lewis OfMan-Siesta Freestyle feat. Alicia Te Quiero_720.mp4" crossorigin="anonymous" type="video/mp4" controls>  </video></td><td style="visibility:hidden"></td>
+   		</tr>
+   		
+   		<tr alight="center"><td style="visibility:hidden"></td><td><video width="340" height="260" src="https://gyroxon.github.io/mos-parks/The Forest Of My Heart.mp4" crossorigin="anonymous" type="video/mp4" controls>  </video></td>
+   		</tr>
+   		
+   		<tr alight="center"><td><video width="320" height="240" src="https://gyroxon.github.io/mos-parks/Gigante-Chiquito_480p.mp4" crossorigin="anonymous" type="video/mp4" controls>  </video></td><td style="visibility:hidden"></td>
+   		</tr>
+   		
+   		<tr alight="center"><td style="visibility:hidden"></td><td><video width="340" height="260" src="https://gyroxon.github.io/mos-parks/YUMIKO NOTO GITANO-marimba solo (SD).mp4" crossorigin="anonymous" type="video/mp4" controls>  </video></td>
+   		</tr>
+   		
+   		<tr alight="center"><td><video width="320" height="240" src="https://gyroxon.github.io/mos-parks/I Marc 4-Love Theme.mp4" crossorigin="anonymous" type="video/mp4" controls>  </video></td><td style="visibility:hidden"></td>
+   		</tr>
+   
+   		
+   		</table>
+
+	</br>
+	<p>* * *</p>
+	<p>17 Июля 2025 by Gyros</p>
+	</center>
+</body>
+</html>

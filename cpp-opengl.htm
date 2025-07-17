@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C/C++/OpenGL</title>
+</head>
+
+
+<style type="text/css">
+textarea {
+          color:black;
+          background-color:Wheat;
+          font-family:"Courier";
+          resize:none;
+          border-radius: 12px;
+          margin: 5px auto;
+    	  padding: 10px;   
+          }
+body {font-family:"Arial";color:navy;background:LightSlateGray;}
+table {
+    align:center;
+    width: 100%;              /* Ширина таблицы */
+    border: 0px solid #333;  /* Граница вокруг таблицы */
+    border-spacing: 7px 5px; /* Расстояние между ячеек */
+    border-radius: 10px;     /* Радиус скругления */
+   }
+td {
+    color: black;
+    background: #8FBC8F;     /* Цвет фона */
+    border: 1px solid #333;  /* Граница вокруг ячеек */
+    padding: 10px;            /* Поля в ячейках */ 
+    border-radius: 12px;     /* Радиус скругления */
+   }
+ .ptext {
+    text-indent: 30px;       /* Отступ первой строки в пикселах */
+    font-family: monospace, sans-serif;
+    width:95%;
+    text-align:justify;
+    margin: 5px auto;
+    line-height: 24px;
+    padding: 10px;   
+  }
+  summary {
+  	font-style: italic;
+  	font-weight: bold;
+  	letter-spacing: 2px;
+  }
+</style>
+
+<body>
+<center>
+<h1>C/C++/OpenGL</h1>
+<p="status">* * *</p>
+
+<h2> Не совсем минимальная программа GLUT</h2>
+<table>
+   <tr><td><p class="ptext">
+  Не совсем минимальная программа С+freeGLUT в стиле фиксированного конвейера OpenGL.
+  </br>
+  Используемые графические примитивы:
+  <ul>
+    <li> треугольник (GL_TRIANGLES)</li>
+    <li> прямоугольник (GL_RECT)</li>
+    <li> линии (GL_LINES).</li>
+    <li> точки для имитации частиц дыма (GL_POINTS).</li>
+  </ul>   
+  </br>
+  Скриншот программы:
+  <center><img src="img/cpp-opengl/minimalgl.png"  height="25%" width="25%" alt="Домик"></center>
+   При запуске приложение сохраняет текстовый файл с информацией о графической системе компьютера.
+  </p>
+  <details>
+    <summary>Пример информации о видеосистеме</summary>
+    <textarea cols="60" rows="7" readonly=true spellcheck=false>Jul  7 2025  13:15:22
+  GLUT Version:  30600
+        Vendor:  NVIDIA Corporation
+      Renderer:  GeForce GT 1030/PCIe/SSE2
+OpenGL Version:  4.6.0 NVIDIA 390.157
+  GLSL Version:  4.60 NVIDIA
+</textarea>
+</details>
+</br>
+ <span style="color:blue">Скачать EXE</span>
+  <a href="https://raw.github.com/gyroxon/minimalgl/main/minimalgl.7z" download="minimalgl_exe.7z"><img src="img/diskette_exe.png" alt="EXE"/></a> 
+  <span style="color:blue">Скачать SRC</span>
+  <a href="https://raw.github.com/gyroxon/minimalgl/main/minimalgl_src.7z" download="minimalgl_src.7z"><img src="img/diskette_src.png" alt="SRC"/></a> 
+</td></tr>
+</table>
+</br>
+
+
+<a name="anchor-point-tab-1"></a> 
+<h2>Маленькая библиотечка графических форм</h2>
+<table>
+   <tr><td><p class="ptext">
+   Интерактивные фигуры на плоскости, 
+  которые можно выделять и перемещать по экрану:
+  <ul>
+    <li> разновидности суперфигуры,</li>
+    <li> круг, эллипс,</li>
+    <li> текстурированный прямоугольник.</li>
+  </ul>   
+   Неинтерактивные фигуры:
+   <ul>
+     <li> полилиния,</li>
+     <li> арка. </li>
+   </ul>
+  </br>
+  С+freeGLUT+GLEW в стиле программируемого (используются простейшие шейдеры) конвейера OpenGL.
+  </br>
+  Скриншот программы:
+  <center><img src="img/cpp-opengl/shapes.png"  height="35%" width="35%" alt="Формы"></center>
+  
+  Уравнение суперформы выглядит так:
+   <center><img src="img/cpp-opengl/eq_supershape.png"  height="35%" width="35%" alt="Уравнение суперформы"></center>
+  где m, n1, n2, n3 могут быть дробными числами.
+  </p>
+  Регулируя параметры суперформы можно получать как различные экзотические фигуры, так и самый обыкновенный круг.
+  </br>
+  <details>
+    <summary>Примеры экзотических форм</summary>
+    <div>
+    	<img src="img/cpp-opengl/super1.png"  height="35%" width="35%" alt="Форма1">
+    	<img src="img/cpp-opengl/super2.png"  height="35%" width="35%" alt="Форма2">
+    	<img src="img/cpp-opengl/super3.png"  height="35%" width="35%" alt="Форма3">
+    	<img src="img/cpp-opengl/super4.png"  height="35%" width="35%" alt="Форма4">
+    	<img src="img/cpp-opengl/super5.png"  height="35%" width="35%" alt="Форма5">
+    	<img src="img/cpp-opengl/super6.png"  height="35%" width="35%" alt="Форма6">
+    </div>
+</details>
+
+<p class="ptext">При вычислении точек суперформы потребовалась функция вычисления дробной степени из числа. Известно, что  функция возведения в степень pow из math.h
+иммеет известные ограничения на операнды, чтобы избежать ошибки области определения. Поэтому возведение в степень было реализовано через экспоненту логарифма.</p>
+<details>
+    <summary>Реализация возведения в степень</summary>
+     <textarea cols="60" rows="5" readonly=true spellcheck=false>
+float fracpower(const float a, const float p)
+{
+    return exp(p*log(a));
+}
+     </textarea>
+</details>
+  </br>
+  <span style="color:blue">Скачать EXE</span>
+  <a href="https://raw.github.com/gyroxon/shapes/main/shapes_exe.7z" download="shapes_exe.7z"><img src="img/diskette_exe.png" alt="EXE"/></a> 
+  <span style="color:blue">Скачать SRC</span>
+  <a href="https://raw.github.com/gyroxon/shapes/main/shapes_src.7z" download="shapes_src.7z"><img src="img/diskette_src.png" alt="SRC"/></a> 
+</td></tr>
+</table>
+</br>
+
+
+<p>* * *</p>
+<p>17 Июля 2025 by Gyros</p>
+</center>
+</body>
+</html>

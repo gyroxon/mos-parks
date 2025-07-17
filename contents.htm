@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Парки Москвы</title>
+<script language="Javascript" type='text/javascript'>
+document.addEventListener('DOMContentLoaded', function () {
+    // Текущее значение счетчика из localStorage
+    let cnt = localStorage.getItem('visitCount');
+    // Устанавливаем счетчик в 0, если посещение впервые
+    if (cnt === null) { cnt = 0; };
+    // Увеличиваем счетчик на 1
+    cnt++;
+    // Обновляем значение счетчика в localStorage
+    localStorage.setItem('visitCount', cnt);
+    // Выводим значение счетчика на страницу
+    document.getElementById('counter').innerText = cnt;
+});
+</script>
+
+<style type="text/css">
+body {font-family:"Arial"; color:#493628; background-image:URL(img/conppr_brown_512.png); background-color:Bisque}
+th, td {  padding: 6px; }
+a.button {
+  border: none;
+  color: white;
+  padding: 2px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+a.button1 {
+  width: 200px;
+  background-color: #ECCA9C;
+  color: black;
+  border: 3px solid #867070;
+}
+
+a.button1:hover {
+  width: 200px;
+  background-color: #C6E7FF;
+  color: white;
+}
+
+a.button2 {
+  width: 140px;
+  background-color: #ECCA9C;
+  color: black;
+  border: 3px solid #867070;
+}
+
+a.button2:hover {
+  width: 140px;
+  background-color: #C6E7FF;
+  color: white;
+}
+
+a.button3 {
+  width: 70px;
+  border-radius: 0px;
+  background-color: #D76C82;
+  color: #013220;
+  border: 3px solid #867070;
+}
+
+a.button3:hover {
+  width: 70px;
+  border-radius: 0px;
+  background-color: #C6E7FF;
+  color: #013220;
+}
+</style>
+
+</head>
+  
+<body>
+<p><a href="main.htm" target="main" class="button button3">Начало</a></p>
+<left>
+<table border="0">
+   <tr>
+       <th style="font-size: 20px;" align="left"><img src="img\waterball.png" height="7%" width="7%"/> Парки:</th>
+   </tr>
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="kuzmin.htm" target="main" class="button button1"><font size="4" color="#013220"><b> Кузьминский</b></font></a></td>
+   </tr>
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="kolom.htm" target="main" class="button button1"><font size="4" color="#013220"><b> Коломенское</b></font></a></td>
+   </tr>
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="borisovsk.htm" target="main" class="button button1"><font size="4" color="#013220"><b> Борисовские пруды</b></font></a></td>
+   </tr>
+
+    <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="zcarizc.htm" target="main" class="button button1"><font size="4" color="#013220"><b> Царицынские пруды</b></font></a></td>
+   </tr>
+
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="other_places.htm" target="main" class="button button1"><font size="4" color="#013220"><b> Разные места</b></font></a></td>
+   </tr>
+
+
+   <tr  height="20px;"><td colspan="2"></td></tr>
+  
+   <tr>
+       <th style="font-size: 20px;" align="left"><img src="img\waterball.png" height="7%" width="7%"/> Мои творения:</th>
+   </tr>
+   <tr>
+       <td colspan="2" align="right"><img src="img\bullet.png" /><a href="cpp-opengl.htm" target="main" class="button button2"><font size="4" color="#013220"><b> C/C++/OpenGL</b></font></a></td>
+   </tr>
+   <tr>
+       <td colspan="2" align="right"><img src="img\bullet.png" /><a href="maple-anim.htm" target="main" class="button button2"><font size="4" color="#013220"><b> Maple</b></font></a></td
+   </tr>
+   
+   <tr  height="20px;"><td colspan="2"></td></tr>
+   
+   <tr>
+       <th style="font-size: 20px;" align="left"><img src="img\waterball.png" height="7%" width="7%"/> Интересное:</th>
+   </tr>
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="humor.htm" target="main" class="button button2"><font size="4" color="#013220"><b> Юмор</b></font></a></td>
+   </tr>
+   
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="pixel-art.htm" target="main" class="button button2"><font size="4" color="#013220"><b> Пиксель-Арт</b></font></a></td>
+   </tr>
+
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="anim.htm" target="main" class="button button2"><font size="4" color="#013220"><b> Анимация</b></font></a></td>
+   </tr>
+   
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="muzz.htm" target="main" class="button button2"><font size="4" color="#013220"><b> Мелодии</b></font></a></td>
+   </tr>
+
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="philos_theme.htm" target="main" class="button button2"><font size="4" color="#013220"><b> О жизни</b></font></a></td>
+   </tr>
+
+    <tr  height="20px;"><td colspan="2"></td></tr>
+
+   <tr>
+       <th style="font-size: 20px;" align="left"><img src="img\waterball.png" height="7%" width="7%"/> Обратная связь:</th>
+   </tr>
+   <tr>
+        <td colspan="2" align="right"><img src="img\bullet.png" /><a href="feedback.htm" target="main" class="button button1"><font size="4" color="#013220"><b> Написать автору</b></font></a></td>
+   </tr>
+   
+</table>
+
+
+</left>
+<center>
+<p>* * *</p>
+<p>Количество посещений: <span id="counter">0</span></p>
+<p>5 Апреля 2025 by Gyros</p>
+</center>
+</body>
+</html>
