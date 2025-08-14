@@ -9,7 +9,7 @@
 <style type="text/css">
 textarea {
           color:black;
-          background-color:Wheat;
+          background: #9B9E8F;
           font-family:"Courier";
           resize:none;
           border-radius: 12px;
@@ -19,9 +19,10 @@ textarea {
 body {font-family:"Arial";color:navy;background:LightSlateGray;}
 table {
     align:center;
+    font-family: monospace, sans-serif;
     width: 100%;              /* Ширина таблицы */
     border: 0px solid #333;  /* Граница вокруг таблицы */
-    border-spacing: 7px 5px; /* Расстояние между ячеек */
+    border-spacing: 7px 5px; /* Расстояние между ячейками */
     border-radius: 10px;     /* Радиус скругления */
    }
 td {
@@ -59,9 +60,9 @@ td {
   </br>
   Используемые графические примитивы:
   <ul>
-    <li> треугольник (GL_TRIANGLES)</li>
-    <li> прямоугольник (GL_RECT)</li>
-    <li> линии (GL_LINES).</li>
+    <li> треугольник (GL_TRIANGLES),</li>
+    <li> прямоугольник (GL_QUADS),</li>
+    <li> линии (GL_LINES),</li>
     <li> точки для имитации частиц дыма (GL_POINTS).</li>
   </ul>   
   </br>
@@ -81,7 +82,7 @@ OpenGL Version:  4.6.0 NVIDIA 390.157
 </details>
 </br>
  <span style="color:blue">Скачать EXE</span>
-  <a href="https://raw.github.com/gyroxon/minimalgl/main/minimalgl.7z" download="minimalgl_exe.7z"><img src="img/diskette_exe.png" alt="EXE"/></a> 
+  <a href="https://raw.github.com/gyroxon/minimalgl/main/minimalgl_exe.7z" download="minimalgl_exe.7z"><img src="img/diskette_exe.png" alt="EXE"/></a> 
   <span style="color:blue">Скачать SRC</span>
   <a href="https://raw.github.com/gyroxon/minimalgl/main/minimalgl_src.7z" download="minimalgl_src.7z"><img src="img/diskette_src.png" alt="SRC"/></a> 
 </td></tr>
@@ -116,7 +117,7 @@ OpenGL Version:  4.6.0 NVIDIA 390.157
   где m, n1, n2, n3 могут быть дробными числами.
   </p>
   Регулируя параметры суперформы можно получать как различные экзотические фигуры, так и самый обыкновенный круг.
-  </br>
+  </br></br>
   <details>
     <summary>Примеры экзотических форм</summary>
     <div>
@@ -130,7 +131,8 @@ OpenGL Version:  4.6.0 NVIDIA 390.157
 </details>
 
 <p class="ptext">При вычислении точек суперформы потребовалась функция вычисления дробной степени из числа. Известно, что  функция возведения в степень pow из math.h
-иммеет известные ограничения на операнды, чтобы избежать ошибки области определения. Поэтому возведение в степень было реализовано через экспоненту логарифма.</p>
+имеет известные ограничения на операнды, чтобы избежать ошибки области определения. Поэтому возведение в степень было реализовано через экспоненту логарифма.</p>
+</br>
 <details>
     <summary>Реализация возведения в степень</summary>
      <textarea cols="60" rows="5" readonly=true spellcheck=false>
@@ -149,9 +151,45 @@ float fracpower(const float a, const float p)
 </table>
 </br>
 
+<a name="anchor-point-tab-2"></a> 
+<h2>glslCanvas - Простейший редактор пиксельных шейдеров</h2>
+<table>
+   <tr><td>
+   <p class="ptext"> Простейший редактор пиксельных шейдеров. </p>
+   <p class="ptext"> Особенности:
+  <ul>
+    <li> написан на С++;</li>
+    <li> кроссплатформенная оконная подсистема - библиотека glfw3;</li>
+    <li> интерфейс пользователя -  библиотека ImGui;</li>
+    <li> звуковое сопровождение - библиотека OpenAL;</li>
+    <li> готовый набор работающих пресетов-шейдеров с shadertoy.com
+       (все права на шейдеры принадлежат их владельцам)</li>
+  </ul>   
+  Написан в 2023 году.
+  </br></br>
+  Скриншот программы:
+  </p>
+  <center><img src="https://github.com/gyroxon/glslCanvas/blob/main/glcanv-08-14-091825.jpg"  height="35%" width="35%" alt="Окно"></center>
+  
+  </br></br>
+  <details>
+    <summary>Еще скриншоты онка программы</summary>
+    <div>
+    	<img src="https://github.com/gyroxon/glslCanvas/main/glcanv-08-14-091955.jpg"  height="35%" width="35%" alt="Окно1">
+    	<img src="https://github.com/gyroxon/glslCanvas/main/glcanv-08-14-091936.jpg"  height="35%" width="35%" alt="Окно2">
+    	<img src="https://github.com/gyroxon/glslCanvas/main/glcanv-08-14-092024.jpg"  height="35%" width="35%" alt="Окно3">
+    	<img src="https://github.com/gyroxon/glslCanvas/main/glcanv-08-14_10-51-42.jpg"  height="35%" width="35%" alt="Окно4">
+    </div>
+</details>
+  </br>
+  <span style="color:blue">Скачать EXE</span>
+  <a href="https://raw.github.com/gyroxon/glslCanvas/main/glslCanvas.7z" download="shapes_exe.7z"><img src="img/diskette_exe.png" alt="EXE"/></a> 
+</td></tr>
+</table>
+</br>
 
 <p>* * *</p>
-<p>17 Июля 2025 by Gyros</p>
+<p>14 Августа 2025 by Gyros</p>
 </center>
 </body>
 </html>
